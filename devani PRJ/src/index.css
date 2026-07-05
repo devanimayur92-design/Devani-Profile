@@ -1,22 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.skills{
-  margin-left: 20px;
-  padding-left: 500px;
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling on mobile */
 }
-.list{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-}
-.photo{
-  height: 50px;
-  width: 50px;
-}
-.footer{
-  gap: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
+a {
+  text-decoration: none;
+  color: inherit;
 }

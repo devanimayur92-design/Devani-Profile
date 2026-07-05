@@ -27,7 +27,6 @@ const Coder = () => {
         <div className="skills-showcase">
           <h3>Core Technical Arsenal</h3>
           <ul className="skills-list">
-            {/* <li><strong>Languages & Logic:</strong> JavaScript (ES6+), TypeScript, Node.js</li> */}
             <li><strong>Frontend Engineering:</strong> React.js, HTML5 Semantic Architecture, CSS3 / Sass</li>
             <li><strong>Ecosystem & Tools:</strong> Tailwind CSS, RESTful APIs, Git, Vite</li>
           </ul>

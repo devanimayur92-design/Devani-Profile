@@ -1,32 +1,47 @@
 :root {
-  --text-dark: #0f172a;       /* Deep slate for clean readability */
-  --text-muted: #475569;      /* Smooth gray for paragraphs */
-  --accent-blue: #0284c7;     /* High-contrast professional sky blue */
-  --accent-light: #e0f2fe;    /* Subtle blue tint for badges */
+  --text-dark: #0f172a;       
+  --text-muted: #475569;      
+  --accent-blue: #0284c7;     
+  --accent-light: #e0f2fe;    
   --panel-bg: #ffffff;
-  --photo-size: 220px;        /* Clean, proportional avatar sizing */
+  --photo-size: 180px; /* Smaller base size for mobile */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --photo-size: 220px;
+  }
 }
 
 /* Master Hero Container */
 .coder-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Stacked layout by default for mobile */
   max-width: 1100px;
-  margin: 5rem auto;
-  padding: 3.5rem 2.5rem;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
   background-color: var(--panel-bg);
-  background-color: #e6e9eb;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.04); /* Modern architectural drop-shadow */
-  gap: 80px;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.04); 
+  gap: 40px;
+}
+
+/* Desktop layout rules */
+@media (min-width: 901px) {
+  .coder-container {
+    flex-direction: row;
+    padding: 3.5rem 2.5rem;
+    margin: 5rem auto;
+    gap: 80px;
+    align-items: center;
+  }
 }
 
 /* Left Content Styles */
 .left-content {
-  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .photo-wrapper {
@@ -40,16 +55,23 @@
   object-fit: cover;
   object-position: center 30%;
   border: 4px solid var(--accent-blue);
-  box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15); /* Modern soft shadow matching the border */
+  box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15); 
 }
 
 /* Right Content Styles */
 .right-content {
-  flex: 1.8;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  font-family: 'Inter', system-ui, sans-serif;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 901px) {
+  .right-content {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1.8;
+  }
 }
 
 /* Status Badge */
@@ -62,29 +84,49 @@
   border-radius: 100px;
   margin-bottom: 1rem;
   letter-spacing: 0.3px;
+  display: inline-block;
 }
 
 /* Typography Hierarchy */
 .hero-title {
   color: var(--text-dark);
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 800;
   margin: 0 0 0.25rem 0;
   letter-spacing: -1px;
 }
 
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
 .hero-subtitle {
   color: var(--accent-blue);
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin: 0 0 1.25rem 0;
 }
 
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+}
+
 .bio-text {
   color: var(--text-muted);
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
   margin: 0 0 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .bio-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
 }
 
 /* Core Technical Grid Section */
@@ -111,6 +153,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  text-align: left;
 }
 
 .skills-list li {
@@ -131,11 +174,29 @@
 /* Button UI Actions */
 .cta-group {
   display: flex;
-  gap: 16px;
+  flex-direction: column; /* stacked actions on tiny devices */
+  gap: 12px;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .cta-group {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    width: auto;
+  }
+}
+
+@media (min-width: 901px) {
+  .cta-group {
+    justify-content: flex-start;
+  }
 }
 
 .btn {
-  text-decoration: none;
+  display: inline-block;
+  text-align: center;
   padding: 0.8rem 1.6rem;
   font-weight: 600;
   font-size: 1rem;
@@ -161,23 +222,4 @@
 .btn-secondary:hover {
   background-color: #e2e8f0;
   transform: translateY(-2px);
-}
-
-/* Responsive Adaptive Setup */
-@media (max-width: 900px) {
-  .coder-container {
-    flex-direction: column;
-    margin: 2rem 1rem;
-    padding: 3rem 1.5rem;
-    gap: 40px;
-  }
-  
-  .right-content {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .skills-list {
-    text-align: left;
-  }
 }
