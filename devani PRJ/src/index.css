@@ -1,0 +1,22 @@
+
+.skills{
+  margin-left: 20px;
+  padding-left: 500px;
+}
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.photo{
+  height: 50px;
+  width: 50px;
+}
+.footer{
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
